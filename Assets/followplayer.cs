@@ -1,15 +1,24 @@
 using UnityEngine;
 
-public class followplayer : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
-    public Transform mover; // Assign the mover GameObject here
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0f, 2f, -5f); // Adjust offset as needed
+    public float smoothSpeed = 10f; // Smoothing factor for camera movement
+    public float fixedY = 2f; // Fixed Y position for the camera
 
-    void Update()
+    void LateUpdate()
     {
-        if (mover != null)
+        // Assuming the camera is a child of the player GameObject
+        Transform playerTransform = transform.parent; // Get the parent transform (player)
+
+        if (playerTransform != null)
         {
-            transform.position = mover.position + offset;
+            // Calculate the desired position of the camera
+            Vector3 targetPosition = playerTransform.position + offset;
+            targetPosition.y = fixedY; // Keep Y position constant
+
+            // Smoothly interpolate towards the desired position
+            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
         }
     }
 }

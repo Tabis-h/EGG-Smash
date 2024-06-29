@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MouseCamera : MonoBehaviour
 {
-    public Vector2 turn;
     public float sensitivity = 0.5f;
-    public Vector3 deltaMove;
     public float speed = 1;
-    public GameObject mover;
+    public GameObject mover; // Assign the player GameObject here
+
+    private float rotationX = 0f; // Current rotation around X-axis (for camera pitch)
 
     void Start()
     {
@@ -17,36 +17,39 @@ public class MouseCamera : MonoBehaviour
 
     void Update()
     {
+        // Check if mover is assigned
+        if (mover == null)
+        {
+            Debug.LogWarning("Player object is not assigned in the MouseCamera script.");
+            return;
+        }
+
         // Get mouse input
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
         // Update rotation based on mouse input
-        turn.x += mouseX * sensitivity;
-        turn.y += mouseY * sensitivity;
+        rotationX -= mouseY * sensitivity;
+        rotationX = Mathf.Clamp(rotationX, -90f, 90f);
 
-        // Clamp the vertical rotation
-        turn.y = Mathf.Clamp(turn.y, -90f, 90f);
+        // Apply horizontal rotation to the player (mover)
+        mover.transform.localRotation = Quaternion.Euler(0, mouseX * sensitivity, 0) * mover.transform.localRotation;
 
-        // Apply horizontal rotation to the mover
-        if (mover != null)
-        {
-            Quaternion targetRotation = Quaternion.Euler(0, turn.x, 0);
-            mover.transform.localRotation = Quaternion.Slerp(mover.transform.localRotation, targetRotation, Time.deltaTime * 5f);
-        }
+        // Calculate camera position relative to player's forward direction
+        Vector3 desiredCameraPosition = mover.transform.position - mover.transform.forward * 5f; // Adjust distance as needed
+        desiredCameraPosition.y = mover.transform.position.y + 2f; // Adjust height as needed
 
-        // Apply vertical rotation to the camera itself
-        transform.localRotation = Quaternion.Euler(-turn.y, 0, 0);
+        // Smoothly move the camera to the desired position
+        transform.position = Vector3.Lerp(transform.position, desiredCameraPosition, speed * Time.deltaTime);
 
-        // Get movement input
+        // Look at the player (mover)
+        transform.LookAt(mover.transform.position + mover.transform.up * 2f); // Adjust look offset as needed
+
+        // Apply movement to the mover (player)
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
-
-        // Calculate move direction relative to the mover's rotation
         Vector3 moveDirection = mover.transform.right * moveX + mover.transform.forward * moveZ;
         moveDirection *= speed * Time.deltaTime;
-
-        // Apply movement to the mover
         mover.transform.position += moveDirection;
     }
 }
