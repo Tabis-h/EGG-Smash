@@ -1,64 +1,82 @@
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.InputSystem;
+[RequireComponent(typeof(CharacterController) )]
 
 public class PlayerMovment : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float forwardforce = 2000f;
-    public float sidewaysforce = 500f;
-    public float jumpforce = 500f; 
-    private bool isGrounded;
+    private Vector2 _input;
+    private float _velocity;
+    private float _gravity = -9.81f;
+    [SerializeField] private float gravityMultiplyer = 3.0f;
+    private Vector3 _direction;
+    private CharacterController _charactercontroller;
+    [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed= 0.05f;
+    [SerializeField] private float jumpPower;
+
+    private Camera maincamera;
+    private void Awake()
+{
+    _charactercontroller = GetComponent<CharacterController>();
+    maincamera = Camera.main;
+}
+
+    private void Update()
+    {
+        ApplyRotaion();
+        ApplyGravity();
+        ApplyMovement();
+        
+    }
+    
+    private void ApplyMovement(){
+                _charactercontroller.Move(_direction * speed * Time.deltaTime);
+
+    }
+    
+    private void ApplyGravity()
+    {
+        if (_charactercontroller.isGrounded && _velocity<0.0f)
+        {
+            _velocity = -1.0f;
+        }
+        else{
+        _velocity += _gravity * gravityMultiplyer * Time.deltaTime;
+        _direction.y = _velocity;
+        }
+        
+    }
+    
+    public void Move(InputAction.CallbackContext context)
+    {
+        _input = context.ReadValue<Vector2>();
+       _direction = new Vector3 (_input.x,0.0f,_input.y);
+    }
+
+    
+    
+    
+    private void ApplyRotaion()
+
+        {
+              if(_input.sqrMagnitude ==0) return;
+
+              _direction = Quaternion.Euler(0.0f , maincamera.transform.eulerAngles.y, 0.0f)*new Vector3(_input.x,0.0f,_input.y);
+              var targetRotation = Quaternion.LookRotation(_direction, Vector3.up);
+              transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }       
     
 
-    void FixedUpdate()
-{
-    // Move left
-    if (Input.GetKey("a"))
+    public void Jump(InputAction.CallbackContext context)
     {
-        rb.AddForce(-sidewaysforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        if ( context.started) return;
+        if(!_charactercontroller.isGrounded) return;
+
+
+        _velocity = jumpPower;
     }
 
-    // Move right
-    if (Input.GetKey("d"))
-    {
-        rb.AddForce(sidewaysforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-    }
-
-    // Move forward
-    if (Input.GetKey("w"))
-    {
-        rb.AddForce(0, 0, forwardforce * Time.deltaTime, ForceMode.VelocityChange);
-    }
-
-    // Move backward
-    if (Input.GetKey("s"))
-    {
-        rb.AddForce(0, 0, -forwardforce * Time.deltaTime, ForceMode.VelocityChange);
-    }
-
-    // Jump
-    if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-    {
-        rb.AddForce(0, jumpforce, 0, ForceMode.Impulse);
-        isGrounded = false; // Set isGrounded to false to prevent double jumping
-    }
-}
-    // Detect collision with ground
-    void OnCollisionEnter(Collision collision)
-    {
-        // Check if the player is touching the ground
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true; 
-        }
-    }
-
-    // Detect when the player is no longer colliding with the ground
-    void OnCollisionExit(Collision collision)
-    {
-        // Check if the player is no longer touching the ground
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false; 
-        }
-    }
+    
+    
 }
