@@ -362,6 +362,7 @@
 "Assets/CameraManager.cs"
 "Assets/PlayerMovment.cs"
 "Assets/Scripts/mainmenu.cs"
+"Assets/Scripts/pausemenu.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
