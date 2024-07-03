@@ -1,10 +1,10 @@
-# Auto detect text files and normalize their line endings
+
 * text=auto
 
-# Force LF for specific text files
+
 *.json text eol=lf
 
-# Force CRLF for C# scripts
+
 *.cs text eol=crlf
 
 # Binary files
