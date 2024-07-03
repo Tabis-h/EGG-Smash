@@ -391,6 +391,7 @@
 "Assets/Photon/PhotonChat/Demos/DemoChat/NamePickGui.cs"
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/PlayerMovment.cs"
+"Assets/RoomManager.cs"
 "Assets/Scripts/mainmenu.cs"
 "Assets/Scripts/pausemenu.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
