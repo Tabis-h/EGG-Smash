@@ -8,7 +8,7 @@ public class powerup : MonoBehaviour
     public void   OnTriggerEnter(Collider other)
     {
         if(other.name == "Player"){ 
-            PlayerController.walkingSpeed *=1.5f;
+            PlayerController.walkingSpeed *=5f;
            
             Destroy(gameObject);
         }

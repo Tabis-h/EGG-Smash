@@ -10,6 +10,7 @@
 -a="E:\MUL game\EGG-Smash\Library\PlayerScriptAssemblies\Unity.VisualScripting.Core.dll"
 -a="E:\MUL game\EGG-Smash\Library\PlayerScriptAssemblies\Unity.ProBuilder.KdTree.dll"
 -a="E:\MUL game\EGG-Smash\Library\PlayerScriptAssemblies\Unity.ProBuilder.Stl.dll"
+-a="E:\MUL game\EGG-Smash\Library\PlayerScriptAssemblies\Unity.ProGrids.dll"
 -a="E:\MUL game\EGG-Smash\Library\PlayerScriptAssemblies\Unity.VisualScripting.State.dll"
 -a="E:\MUL game\EGG-Smash\Assets\Alteruna\Plugins\Alteruna.Trinity.dll"
 -a="E:\MUL game\EGG-Smash\Assets\Alteruna\Plugins\Alteruna.TrinityEditor.dll"
