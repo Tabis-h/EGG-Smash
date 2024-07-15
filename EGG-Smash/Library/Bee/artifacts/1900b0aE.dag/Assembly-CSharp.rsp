@@ -385,6 +385,7 @@
 "Assets/Alteruna/Scripts/Examples/ExampleRpcSerializable.cs"
 "Assets/Alteruna/Scripts/Examples/ExampleSynchronizable.cs"
 "Assets/_scripts/PlayerController.cs"
+"Assets/_scripts/powerup.cs"
 -langversion:9.0
 
 /deterministic

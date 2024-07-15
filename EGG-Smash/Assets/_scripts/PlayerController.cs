@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Base setup")]
-    public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
+    static public float walkingSpeed = 7.5f;
+    static public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public float lookSpeed = 2.0f;

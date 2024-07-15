@@ -68,6 +68,7 @@
      <Compile Include="Assets\Alteruna\Scripts\Examples\ExampleSynchronizable.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\RoomBrowser\Scripts\BaseRoomBrowser.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\TextChat\TextChatCommands\CommandRotate.cs" />
+     <Compile Include="Assets\_scripts\powerup.cs" />
      <None Include="Assets\Alteruna\Plugins\Alteruna.Trinity.xml" />
      <None Include="Assets\Alteruna\Resources\RegisteredLicense.txt" />
     <Reference Include="UnityEngine">
