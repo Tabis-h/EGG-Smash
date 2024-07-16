@@ -322,6 +322,8 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
+-r:"C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
 -r:"E:/MUL game/EGG-Smash/Library/PackageCache/com.unity.testtools.codecoverage@1.2.3/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"E:/MUL game/EGG-Smash/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
@@ -384,8 +386,12 @@
 "Assets/Alteruna/Scripts/Examples/ExampleRpcProcedureParameters.cs"
 "Assets/Alteruna/Scripts/Examples/ExampleRpcSerializable.cs"
 "Assets/Alteruna/Scripts/Examples/ExampleSynchronizable.cs"
+"Assets/bullet.cs"
+"Assets/_scripts/AlterunaNetworkManager.cs"
+"Assets/_scripts/GameManager.cs"
 "Assets/_scripts/Mainmenu.cs"
 "Assets/_scripts/PlayerController.cs"
+"Assets/_scripts/PlayerShooting.cs"
 "Assets/_scripts/powerup.cs"
 -langversion:9.0
 

@@ -60,6 +60,7 @@
      <Compile Include="Assets\Alteruna\Prefabs\TextChat\TextChatCommands\CommandJoinRoom.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\RoomBrowser\Scripts\RoomBrowserSortButton.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\TextChat\TextChatCommands\CommandUid.cs" />
+     <Compile Include="Assets\_scripts\Mainmenu.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\TextChat\TextChatCommands\CommandTp.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\TextChat\TextChatSynchronizable.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\TextChat\TextChatCommands\CommandLeaveRoom.cs" />
@@ -69,7 +70,10 @@
      <Compile Include="Assets\Alteruna\Scripts\Examples\ExampleSynchronizable.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\RoomBrowser\Scripts\BaseRoomBrowser.cs" />
      <Compile Include="Assets\Alteruna\Prefabs\TextChat\TextChatCommands\CommandRotate.cs" />
-     <Compile Include="Assets\_scripts\Mainmenu.cs" />
+     <Compile Include="Assets\_scripts\PlayerShooting.cs" />
+     <Compile Include="Assets\bullet.cs" />
+     <Compile Include="Assets\_scripts\GameManager.cs" />
+     <Compile Include="Assets\_scripts\AlterunaNetworkManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -350,6 +354,12 @@
     </Reference>
     <Reference Include="ReportGeneratorMerged">
         <HintPath>E:\MUL game\EGG-Smash\Library\PackageCache\com.unity.testtools.codecoverage@1.2.3\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+        <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+        <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.25f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

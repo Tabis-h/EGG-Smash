@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - Alteruna.RoomMenu
     - Mainmenu
     - PlayerController
+    - PlayerShooting
     - powerup
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.ProBuilderEditor
@@ -121,31 +122,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1562}
+      Script: {instanceID: 16082}
     - Class: 114
-      Script: {instanceID: 1614}
+      Script: {instanceID: 16134}
     - Class: 114
-      Script: {instanceID: 2272}
+      Script: {instanceID: 16792}
     - Class: 114
-      Script: {instanceID: 2284}
+      Script: {instanceID: 16804}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 17294}
     - Class: 114
-      Script: {instanceID: 2992}
+      Script: {instanceID: 17512}
     - Class: 114
-      Script: {instanceID: 3312}
+      Script: {instanceID: 17832}
     - Class: 114
-      Script: {instanceID: 4398}
+      Script: {instanceID: 18918}
     - Class: 114
-      Script: {instanceID: 4676}
+      Script: {instanceID: 19196}
     - Class: 114
-      Script: {instanceID: 5446}
+      Script: {instanceID: 19966}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 20734}
     - Class: 114
-      Script: {instanceID: 6570}
+      Script: {instanceID: 20878}
     - Class: 114
-      Script: {instanceID: 24638}
+      Script: {instanceID: 21092}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -181,6 +182,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -194,43 +197,47 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1562}
+      Script: {instanceID: 16082}
     - Class: 114
-      Script: {instanceID: 1566}
+      Script: {instanceID: 16086}
     - Class: 114
-      Script: {instanceID: 1614}
+      Script: {instanceID: 16134}
     - Class: 114
-      Script: {instanceID: 2054}
+      Script: {instanceID: 16574}
     - Class: 114
-      Script: {instanceID: 2292}
+      Script: {instanceID: 16812}
     - Class: 114
-      Script: {instanceID: 2302}
+      Script: {instanceID: 16822}
     - Class: 114
-      Script: {instanceID: 2398}
+      Script: {instanceID: 16918}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 17294}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 17314}
     - Class: 114
-      Script: {instanceID: 2992}
+      Script: {instanceID: 17512}
     - Class: 114
-      Script: {instanceID: 3312}
+      Script: {instanceID: 17832}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 18016}
     - Class: 114
-      Script: {instanceID: 3810}
+      Script: {instanceID: 18330}
     - Class: 114
-      Script: {instanceID: 4152}
+      Script: {instanceID: 18672}
     - Class: 114
-      Script: {instanceID: 5722}
+      Script: {instanceID: 20242}
     - Class: 114
-      Script: {instanceID: 6570}
+      Script: {instanceID: 21092}
     - Class: 114
-      Script: {instanceID: 6578}
+      Script: {instanceID: 21100}
     - Class: 114
-      Script: {instanceID: 7050}
+      Script: {instanceID: 21572}
     - Class: 114
-      Script: {instanceID: 7798}
+      Script: {instanceID: 22320}
+    - Class: 114
+      Script: {instanceID: 25930}
+    - Class: 114
+      Script: {instanceID: 30756}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1065,6 +1072,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Mainmenu
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.ProGrids.dll
     namespaceName: UnityEngine.ProGrids
     className: IgnoreSnap
@@ -1334,10 +1347,10 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 5a04ebee5d2b0186856baca9c13f5631
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Mainmenu
+    className: PlayerShooting
   platform: 19
   scenePathNames:
   - Assets/Scenes/MAIN MENu.unity
