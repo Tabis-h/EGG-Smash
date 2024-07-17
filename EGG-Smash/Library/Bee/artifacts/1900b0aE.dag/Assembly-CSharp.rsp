@@ -386,12 +386,10 @@
 "Assets/Alteruna/Scripts/Examples/ExampleRpcProcedureParameters.cs"
 "Assets/Alteruna/Scripts/Examples/ExampleRpcSerializable.cs"
 "Assets/Alteruna/Scripts/Examples/ExampleSynchronizable.cs"
-"Assets/bullet.cs"
-"Assets/_scripts/AlterunaNetworkManager.cs"
-"Assets/_scripts/GameManager.cs"
+"Assets/_scripts/DisplayHealthText.cs"
 "Assets/_scripts/Mainmenu.cs"
 "Assets/_scripts/PlayerController.cs"
-"Assets/_scripts/PlayerShooting.cs"
+"Assets/_scripts/PlayerShoot.cs"
 "Assets/_scripts/powerup.cs"
 -langversion:9.0
 

@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
 
     [SerializeField]
-    private float cameraYOffset = 0.4f;
+    private float cameraDistance = 5.0f;
+    [SerializeField]
+    private float cameraHeight = 2.0f;
     private Camera playerCamera;
 
     private Alteruna.Avatar _avatar;
@@ -34,11 +36,31 @@ public class PlayerController : MonoBehaviour
         
         characterController = GetComponent<CharacterController>();
         playerCamera = Camera.main;
-        playerCamera.transform.position = new Vector3(transform.position.x, transform.position.y + cameraYOffset, transform.position.z);
-        playerCamera.transform.SetParent(transform);
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    void LateUpdate()
+    {
+        if (!_avatar.IsMe)
+            return;
+
+        // Camera control
+        if (canMove && playerCamera != null)
+        {
+            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+
+            float rotationY = Input.GetAxis("Mouse X") * lookSpeed;
+
+            transform.rotation *= Quaternion.Euler(0, rotationY, 0);
+
+            Vector3 cameraOffset = new Vector3(0, cameraHeight, -cameraDistance);
+            Quaternion cameraRotation = Quaternion.Euler(rotationX, transform.eulerAngles.y, 0);
+            playerCamera.transform.position = transform.position + cameraRotation * cameraOffset;
+            playerCamera.transform.LookAt(transform.position + Vector3.up * cameraHeight);
+        }
     }
 
     void Update()
@@ -48,10 +70,10 @@ public class PlayerController : MonoBehaviour
         
         bool isRunning = false;
 
-        // Press Left Shift to run
+        
         isRunning = Input.GetKey(KeyCode.LeftShift);
 
-        // We are grounded, so recalculate move direction based on axis
+       
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
@@ -74,16 +96,7 @@ public class PlayerController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        // Move the controller
+        
         characterController.Move(moveDirection * Time.deltaTime);
-
-        // Player and Camera rotation
-        if (canMove && playerCamera != null)
-        {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-        }
     }
 }

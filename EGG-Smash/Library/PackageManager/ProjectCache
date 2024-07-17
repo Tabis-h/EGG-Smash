@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638565719358901848
-    m_Hash: 1452878116
+      ticks: 638567979062979080
+    m_Hash: 1500281656
   m_LockFileStatus:
     m_FilePath: E:/MUL game/EGG-Smash/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638565719358932628
-    m_Hash: 4166728571
+      ticks: 638567979062979080
+    m_Hash: 1943113052
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
